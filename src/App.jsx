@@ -1,13 +1,28 @@
-// src/App.jsx
+import React from 'react';
+import WeatherForecast from './WeatherForecast';
 
 const App = () => {
-
   return (
-    <h1>Hello world!</h1>
+    <>
+      <h1>Local Weather</h1>
+      <section>
+        {weatherForecasts.map((forecast, index) => (
+          <WeatherForecast
+            key={index}
+            day={forecast.day}
+            img={forecast.img}
+            imgAlt={forecast.imgAlt}
+            conditions={forecast.conditions}
+            time={forecast.time}
+          />
+        ))}
+      </section>
+    </>
   );
-}
+};
 
-export default App
+export default App;
+
 
 const weatherForecasts = [
   {
